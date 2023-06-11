@@ -9,25 +9,18 @@
 /* Begin PBXBuildFile section */
 		43CD2D1C2A3655F30037E1E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */; };
 		43CD2D1E2A3655F30037E1E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */; };
-		43CD2D202A3655F30037E1E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1F2A3655F30037E1E4 /* ViewController.swift */; };
-		43CD2D232A3655F30037E1E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D212A3655F30037E1E4 /* Main.storyboard */; };
+		43CD2D202A3655F30037E1E4 /* ReflectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */; };
 		43CD2D262A3655F30037E1E4 /* Reflections.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D242A3655F30037E1E4 /* Reflections.xcdatamodeld */; };
 		43CD2D282A3655F40037E1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D272A3655F40037E1E4 /* Assets.xcassets */; };
 		43CD2D2B2A3655F40037E1E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D292A3655F40037E1E4 /* LaunchScreen.storyboard */; };
 		43CD2D362A3655F40037E1E4 /* ReflectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D352A3655F40037E1E4 /* ReflectionsTests.swift */; };
-		43CD2D402A3655F40037E1E4 /* ReflectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D3F2A3655F40037E1E4 /* ReflectionsUITests.swift */; };
-		43CD2D422A3655F40037E1E4 /* ReflectionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D412A3655F40037E1E4 /* ReflectionsUITestsLaunchTests.swift */; };
+		43CD2D502A3659EC0037E1E4 /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D4F2A3659EC0037E1E4 /* Reflection.swift */; };
+		43CD2D522A365D140037E1E4 /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */; };
+		43CD2D5F2A3668F60037E1E4 /* EmptyReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		43CD2D322A3655F40037E1E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 43CD2D102A3655F30037E1E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 43CD2D172A3655F30037E1E4;
-			remoteInfo = Reflections;
-		};
-		43CD2D3C2A3655F40037E1E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43CD2D102A3655F30037E1E4 /* Project object */;
 			proxyType = 1;
@@ -40,17 +33,17 @@
 		43CD2D182A3655F30037E1E4 /* Reflections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reflections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		43CD2D1F2A3655F30037E1E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		43CD2D222A3655F30037E1E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionListViewController.swift; sourceTree = "<group>"; };
 		43CD2D252A3655F30037E1E4 /* Reflections.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reflections.xcdatamodel; sourceTree = "<group>"; };
 		43CD2D272A3655F40037E1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CD2D2A2A3655F40037E1E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CD2D2C2A3655F40037E1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43CD2D312A3655F40037E1E4 /* ReflectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD2D352A3655F40037E1E4 /* ReflectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsTests.swift; sourceTree = "<group>"; };
-		43CD2D3B2A3655F40037E1E4 /* ReflectionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		43CD2D3F2A3655F40037E1E4 /* ReflectionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsUITests.swift; sourceTree = "<group>"; };
-		43CD2D412A3655F40037E1E4 /* ReflectionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43CD2D4E2A3656120037E1E4 /* Reflections.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reflections.entitlements; sourceTree = "<group>"; };
+		43CD2D4F2A3659EC0037E1E4 /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
+		43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
+		43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReflectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +61,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		43CD2D382A3655F40037E1E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,7 +69,6 @@
 			children = (
 				43CD2D1A2A3655F30037E1E4 /* Reflections */,
 				43CD2D342A3655F40037E1E4 /* ReflectionsTests */,
-				43CD2D3E2A3655F40037E1E4 /* ReflectionsUITests */,
 				43CD2D192A3655F30037E1E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +78,6 @@
 			children = (
 				43CD2D182A3655F30037E1E4 /* Reflections.app */,
 				43CD2D312A3655F40037E1E4 /* ReflectionsTests.xctest */,
-				43CD2D3B2A3655F40037E1E4 /* ReflectionsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,10 +85,13 @@
 		43CD2D1A2A3655F30037E1E4 /* Reflections */ = {
 			isa = PBXGroup;
 			children = (
+				43CD2D4E2A3656120037E1E4 /* Reflections.entitlements */,
 				43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */,
 				43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */,
-				43CD2D1F2A3655F30037E1E4 /* ViewController.swift */,
-				43CD2D212A3655F30037E1E4 /* Main.storyboard */,
+				43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */,
+				43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */,
+				43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */,
+				43CD2D4F2A3659EC0037E1E4 /* Reflection.swift */,
 				43CD2D272A3655F40037E1E4 /* Assets.xcassets */,
 				43CD2D292A3655F40037E1E4 /* LaunchScreen.storyboard */,
 				43CD2D2C2A3655F40037E1E4 /* Info.plist */,
@@ -119,15 +106,6 @@
 				43CD2D352A3655F40037E1E4 /* ReflectionsTests.swift */,
 			);
 			path = ReflectionsTests;
-			sourceTree = "<group>";
-		};
-		43CD2D3E2A3655F40037E1E4 /* ReflectionsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				43CD2D3F2A3655F40037E1E4 /* ReflectionsUITests.swift */,
-				43CD2D412A3655F40037E1E4 /* ReflectionsUITestsLaunchTests.swift */,
-			);
-			path = ReflectionsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,24 +146,6 @@
 			productReference = 43CD2D312A3655F40037E1E4 /* ReflectionsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		43CD2D3A2A3655F40037E1E4 /* ReflectionsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 43CD2D4B2A3655F40037E1E4 /* Build configuration list for PBXNativeTarget "ReflectionsUITests" */;
-			buildPhases = (
-				43CD2D372A3655F40037E1E4 /* Sources */,
-				43CD2D382A3655F40037E1E4 /* Frameworks */,
-				43CD2D392A3655F40037E1E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				43CD2D3D2A3655F40037E1E4 /* PBXTargetDependency */,
-			);
-			name = ReflectionsUITests;
-			productName = ReflectionsUITests;
-			productReference = 43CD2D3B2A3655F40037E1E4 /* ReflectionsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +160,6 @@
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					43CD2D302A3655F40037E1E4 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 43CD2D172A3655F30037E1E4;
-					};
-					43CD2D3A2A3655F40037E1E4 = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 43CD2D172A3655F30037E1E4;
 					};
@@ -224,7 +180,6 @@
 			targets = (
 				43CD2D172A3655F30037E1E4 /* Reflections */,
 				43CD2D302A3655F40037E1E4 /* ReflectionsTests */,
-				43CD2D3A2A3655F40037E1E4 /* ReflectionsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,18 +191,10 @@
 			files = (
 				43CD2D2B2A3655F40037E1E4 /* LaunchScreen.storyboard in Resources */,
 				43CD2D282A3655F40037E1E4 /* Assets.xcassets in Resources */,
-				43CD2D232A3655F30037E1E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		43CD2D2F2A3655F40037E1E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		43CD2D392A3655F40037E1E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,10 +208,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CD2D202A3655F30037E1E4 /* ViewController.swift in Sources */,
+				43CD2D202A3655F30037E1E4 /* ReflectionListViewController.swift in Sources */,
 				43CD2D1C2A3655F30037E1E4 /* AppDelegate.swift in Sources */,
 				43CD2D262A3655F30037E1E4 /* Reflections.xcdatamodeld in Sources */,
+				43CD2D502A3659EC0037E1E4 /* Reflection.swift in Sources */,
 				43CD2D1E2A3655F30037E1E4 /* SceneDelegate.swift in Sources */,
+				43CD2D5F2A3668F60037E1E4 /* EmptyReflectionViewController.swift in Sources */,
+				43CD2D522A365D140037E1E4 /* ReflectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,15 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		43CD2D372A3655F40037E1E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43CD2D402A3655F40037E1E4 /* ReflectionsUITests.swift in Sources */,
-				43CD2D422A3655F40037E1E4 /* ReflectionsUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,22 +234,9 @@
 			target = 43CD2D172A3655F30037E1E4 /* Reflections */;
 			targetProxy = 43CD2D322A3655F40037E1E4 /* PBXContainerItemProxy */;
 		};
-		43CD2D3D2A3655F40037E1E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 43CD2D172A3655F30037E1E4 /* Reflections */;
-			targetProxy = 43CD2D3C2A3655F40037E1E4 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		43CD2D212A3655F30037E1E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43CD2D222A3655F30037E1E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		43CD2D292A3655F40037E1E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,16 +367,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Reflections/Reflections.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 526YR6WHWC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reflections/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +385,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharkberry.Reflections;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,16 +399,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Reflections/Reflections.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 526YR6WHWC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reflections/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,6 +417,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharkberry.Reflections;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -530,42 +466,6 @@
 			};
 			name = Release;
 		};
-		43CD2D4C2A3655F40037E1E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 526YR6WHWC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sharkberry.ReflectionsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reflections;
-			};
-			name = Debug;
-		};
-		43CD2D4D2A3655F40037E1E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 526YR6WHWC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sharkberry.ReflectionsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reflections;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,15 +492,6 @@
 			buildConfigurations = (
 				43CD2D492A3655F40037E1E4 /* Debug */,
 				43CD2D4A2A3655F40037E1E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		43CD2D4B2A3655F40037E1E4 /* Build configuration list for PBXNativeTarget "ReflectionsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				43CD2D4C2A3655F40037E1E4 /* Debug */,
-				43CD2D4D2A3655F40037E1E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
