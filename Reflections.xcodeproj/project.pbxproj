@@ -16,6 +16,8 @@
 		43CD2D502A3659EC0037E1E4 /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D4F2A3659EC0037E1E4 /* Reflection.swift */; };
 		43CD2D522A365D140037E1E4 /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */; };
 		43CD2D5F2A3668F60037E1E4 /* EmptyReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */; };
+		43CD2D832A36C61E0037E1E4 /* Nuvem in Frameworks */ = {isa = PBXBuildFile; productRef = 43CD2D822A36C61E0037E1E4 /* Nuvem */; };
+		43CD2D852A36C9F40037E1E4 /* CloudKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D842A36C9F40037E1E4 /* CloudKit+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		43CD2D4F2A3659EC0037E1E4 /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
 		43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
 		43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReflectionViewController.swift; sourceTree = "<group>"; };
+		43CD2D842A36C9F40037E1E4 /* CloudKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CD2D832A36C61E0037E1E4 /* Nuvem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				43CD2D4E2A3656120037E1E4 /* Reflections.entitlements */,
 				43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */,
 				43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */,
+				43CD2D842A36C9F40037E1E4 /* CloudKit+Extension.swift */,
 				43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */,
 				43CD2D5E2A3668F60037E1E4 /* EmptyReflectionViewController.swift */,
 				43CD2D512A365D140037E1E4 /* ReflectionViewController.swift */,
@@ -121,6 +126,9 @@
 			dependencies = (
 			);
 			name = Reflections;
+			packageProductDependencies = (
+				43CD2D822A36C61E0037E1E4 /* Nuvem */,
+			);
 			productName = Reflections;
 			productReference = 43CD2D182A3655F30037E1E4 /* Reflections.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 43CD2D0F2A3655F30037E1E4;
+			packageReferences = (
+				43CD2D812A36C61E0037E1E4 /* XCRemoteSwiftPackageReference "nuvem" */,
+			);
 			productRefGroup = 43CD2D192A3655F30037E1E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +219,7 @@
 				43CD2D202A3655F30037E1E4 /* ReflectionListViewController.swift in Sources */,
 				43CD2D1C2A3655F30037E1E4 /* AppDelegate.swift in Sources */,
 				43CD2D502A3659EC0037E1E4 /* Reflection.swift in Sources */,
+				43CD2D852A36C9F40037E1E4 /* CloudKit+Extension.swift in Sources */,
 				43CD2D1E2A3655F30037E1E4 /* SceneDelegate.swift in Sources */,
 				43CD2D5F2A3668F60037E1E4 /* EmptyReflectionViewController.swift in Sources */,
 				43CD2D522A365D140037E1E4 /* ReflectionViewController.swift in Sources */,
@@ -493,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43CD2D812A36C61E0037E1E4 /* XCRemoteSwiftPackageReference "nuvem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:AcademyIFCE/nuvem.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43CD2D822A36C61E0037E1E4 /* Nuvem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43CD2D812A36C61E0037E1E4 /* XCRemoteSwiftPackageReference "nuvem" */;
+			productName = Nuvem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43CD2D102A3655F30037E1E4 /* Project object */;
 }

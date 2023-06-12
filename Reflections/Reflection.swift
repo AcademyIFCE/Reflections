@@ -6,11 +6,20 @@
 //
 
 import Foundation
+import Nuvem
+import CloudKit
 
-struct Reflection {
+struct Reflection: CKModel {
+
+    var record: CKRecord!
+    
+    //@CKTimestamp(.creation)
     var timestamp: Date = Date()
-    var title: String = "Nova Reflection"
-    var content: String = """
+    
+    @CKField("title", default: "Nova Reflection")
+    var title: String
+    
+    @CKField("content", default: """
 - Pense sobre seus erros e acertos:  O que você fez certo? O que poderia ter feito melhor? Como você pode fazer para melhorar ainda mais no futuro?
 
 - Pense sobre o seu próprio aprendizado:  O que aprendi com essa atividade? Como esse aprendizado pode ser útil no futuro? Em que contextos posso aplicar o que aprendi?
@@ -18,6 +27,16 @@ struct Reflection {
 - Pense sobre seus sentimentos: Como me senti/estou me sentindo? O que me empolga/empolgou? O me incomoda/incomodou?
 
 - Pense sobre o academy: No que essa atividade me ajudou? No que não me ajudou? Como ela poderia ser melhor para mim e para a turma?
-"""
+""")
+    var content: String
+    
+    init() { }
+    
+    init(record: CKRecord! = nil, timestamp: Date, title: String, content: String) {
+        self.record = record
+        self.timestamp = timestamp
+        self.title = title
+        self.content = content
+    }
 }
 

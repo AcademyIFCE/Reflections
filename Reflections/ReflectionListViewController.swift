@@ -9,15 +9,15 @@ import UIKit
 
 class ReflectionListViewController: UITableViewController {
     
-    var reflections: [Reflection] = [
-        .init(timestamp: Date().advanced(by: -1*60*60*24), title: "Olá Mundo", content: "Aqui foi onde o tudo começou."),
-        .init(timestamp: Date().advanced(by: -1*60*60*24), title: "Escrever reflections é estranho", content: "Mas eu acho que posso aprender a fazer isso."),
-        .init(timestamp: Date(), title: "O segundo dia", content: "As vezes você tem que continuar tentando, mesmo sem se sentir confiante no que ta fazendo.")
-    ]
+    var reflections: [Reflection] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
-    var reflectionsByDate: [(Date, [Reflection])] {
+    var reflectionsByDate: [(String, [Reflection])] {
         reflections.reduce(into: [:]) { (result, reflection) in
-            let date = reflection.timestamp
+            let date = DateFormatter.localizedString(from: reflection.timestamp, dateStyle: .short, timeStyle: .none)
             result[date, default: []].append(reflection)
         }
         .sorted { $0.0 < $1.0 }
@@ -27,7 +27,32 @@ class ReflectionListViewController: UITableViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "Minhas Reflections"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection))
+
+        #if targetEnvironment(macCatalyst)
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection)),
+            UIBarButtonItem(image: .init(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(refresh))
+        ]
+        #else
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection))
+        ]
+        #endif
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        
+        Task {
+            await queryReflections()
+        }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        Task {
+            await queryReflections()
+            refreshControl?.endRefreshing()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +60,7 @@ class ReflectionListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return DateFormatter.localizedString(from: reflectionsByDate[section].0, dateStyle: .short, timeStyle: .short)
+        return reflectionsByDate[section].0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +78,8 @@ class ReflectionListViewController: UITableViewController {
         let ref = reflectionsByDate[indexPath.section].1[indexPath.row]
         let refVC = ReflectionViewController(
             reflection: ref,
-            editReflectionHandler: handleChanges(on:)
+            endEditHandler: handleEndEdit(on:),
+            deleteHandler: handleDelete(on:)
         )
         
         if UIDevice.current.model == "iPhone" {
@@ -64,9 +90,12 @@ class ReflectionListViewController: UITableViewController {
     }
     
     @objc func newReflection(_ sender: UIBarButtonItem) {
+        let newRef = Reflection()
+        
         let newRefVC = ReflectionViewController(
-            reflection: Reflection(),
-            editReflectionHandler: handleChanges(on:)
+            reflection: newRef,
+            endEditHandler: handleEndEdit(on:),
+            deleteHandler: handleDelete(on:)
         )
         
         if UIDevice.current.model == "iPhone" {
@@ -76,10 +105,46 @@ class ReflectionListViewController: UITableViewController {
         }
     }
     
-    func handleChanges(on reflection: Reflection) {
-        print(reflection.title)
-        print(reflection.content)
+    func handleEndEdit(on reflection: Reflection) {
+        if reflection.record != nil {
+            for index in reflections.indices {
+                if reflections[index].id == reflection.id {
+                    reflections[index] = reflection
+                }
+            }
+        }
+        
+        Task {
+            var reflection = reflection
+            do {
+                try await reflection.save(on: .privateDB)
+                print("✅ save complete")
+            } catch {
+                print("❌ save error", error)
+            }
+        }
     }
-
+    
+    func handleDelete(on reflection: Reflection) {
+        guard reflection.record != nil else { return }
+        reflections.removeAll { $0.id == reflection.id }
+        Task {
+            do {
+                try await reflection.delete(on: .privateDB)
+                print("✅ delete complete")
+            } catch {
+                print("❌ delete error", error)
+            }
+        }
+    }
+    
+    func queryReflections() async {
+        do {
+            reflections = try await Reflection.query(on: .privateDB).all()
+            print("✅ query complete")
+        } catch {
+            print("❌ query error", error)
+        }
+    }
 }
 

@@ -10,18 +10,16 @@ import UIKit
 
 class ReflectionViewController: UIViewController {
 
-    var reflection: Reflection {
-        willSet {
-            editReflectionHandler(newValue)
-        }
-    }
+    var reflection: Reflection
     
-    var editReflectionHandler: (Reflection) -> Void
+    var endEditHandler: (Reflection) -> Void
+    var deleteHandler: (Reflection) -> Void
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.text = reflection.title
         textField.font = UIFont.systemFont(ofSize: 28)
+        textField.addTarget(self, action: #selector(edit), for: .allEditingEvents)
         return textField
     }()
     
@@ -29,12 +27,14 @@ class ReflectionViewController: UIViewController {
         let textView = UITextView()
         textView.text = reflection.content
         textView.font = UIFont.systemFont(ofSize: 17)
+        textView.delegate = self
         return textView
     }()
     
-    init(reflection: Reflection, editReflectionHandler: @escaping (Reflection) -> Void) {
+    init(reflection: Reflection, endEditHandler: @escaping (Reflection) -> Void, deleteHandler: @escaping (Reflection) -> Void) {
         self.reflection = reflection
-        self.editReflectionHandler = editReflectionHandler
+        self.endEditHandler = endEditHandler
+        self.deleteHandler = deleteHandler
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,6 +44,18 @@ class ReflectionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGroupedBackground
         self.titleTextField.text = reflection.title
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(delete))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            customView: {
+                let button = UIButton()
+                button.setTitle(" Salvar e fechar", for: .normal)
+                button.setImage(UIImage(systemName: "bird.fill"), for: .normal)
+                button.setTitleColor(UIColor(named: "AccentColor"), for: .normal)
+                button.addTarget(self, action: #selector(saveAndExit), for: .touchUpInside)
+                return button
+            }()
+        )
 
         self.view.addSubview(titleTextField)
         self.view.addSubview(textView)
@@ -61,4 +73,28 @@ class ReflectionViewController: UIViewController {
         ])
     }
     
+    @objc override func delete(_ sender: Any?) {
+        deleteHandler(reflection)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func edit(_ sender: AnyObject) {
+        if sender is UITextField {
+            reflection.title = titleTextField.text ?? "Sem título"
+        } else if sender is UITextView {
+            reflection.content = textView.text ?? "Sem conteúdo"
+        }
+    }
+    
+    @objc func saveAndExit(_ sender: UIBarButtonItem) {
+        endEditHandler(reflection)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+}
+
+extension ReflectionViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        edit(textView)
+    }
 }

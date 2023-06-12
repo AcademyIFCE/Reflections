@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "nuvem",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:AcademyIFCE/nuvem.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ddd5c9de78d6ab82b66ebe2f054c52d80ac38f4e"
+      }
+    }
+  ],
+  "version" : 2
+}
