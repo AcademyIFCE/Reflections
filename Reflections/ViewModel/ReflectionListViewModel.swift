@@ -17,7 +17,7 @@ class ReflectionListViewModel  {
     
     var reflectionsByDate: [(dateString: String, reflections: [Reflection])] {
         reflections.reduce(into: [:]) { (result, reflection) in
-            let dateString = DateFormatter.localizedString(from: reflection.timestamp, dateStyle: .short, timeStyle: .none)
+            let dateString = DateFormatter.localizedString(from: reflection.creationDate ?? Date(), dateStyle: .short, timeStyle: .none)
             result[dateString, default: []].append(reflection)
         }
         .sorted { $0.0 < $1.0 }

@@ -104,16 +104,7 @@ class ReflectionViewController: UIViewController {
         self.view.backgroundColor = .systemGroupedBackground
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(exit))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            customView: {
-                let button = UIButton()
-                button.setTitle(" Salvar e fechar", for: .normal)
-                button.setImage(UIImage(systemName: "bird.fill"), for: .normal)
-                button.setTitleColor(UIColor(named: "AccentColor"), for: .normal)
-                button.addTarget(self, action: #selector(saveAndExit), for: .touchUpInside)
-                return button
-            }()
-        )
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(saveAndExit))
         
         self.navigationController?.isToolbarHidden = false
         let trashButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(delete))

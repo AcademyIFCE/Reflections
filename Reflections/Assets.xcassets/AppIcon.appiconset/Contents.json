@@ -1,67 +1,67 @@
 {
   "images" : [
     {
-      "filename" : "iTunesArtwork@2x.png",
+      "filename" : "App_store_1024_1x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "Icon-App-83.5x83.5@2x 3.png",
+      "filename" : "App_store_1024_1x 10.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "Icon-App-83.5x83.5@2x 2.png",
+      "filename" : "App_store_1024_1x 9.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "Icon-App-83.5x83.5@2x 1.png",
+      "filename" : "App_store_1024_1x 8.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "Icon-App-83.5x83.5@2x.png",
+      "filename" : "App_store_1024_1x 7.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "Icon-App-83.5x83.5@2x 4.png",
+      "filename" : "App_store_1024_1x 6.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "ItunesArtwork@2x 2.png",
+      "filename" : "App_store_1024_1x 5.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "ItunesArtwork@2x 3.png",
+      "filename" : "App_store_1024_1x 4.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "iTunesArtwork@1x 1.png",
+      "filename" : "App_store_1024_1x 3.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "iTunesArtwork@1x.png",
+      "filename" : "App_store_1024_1x 2.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "iTunesArtwork@2x 1.png",
+      "filename" : "App_store_1024_1x 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

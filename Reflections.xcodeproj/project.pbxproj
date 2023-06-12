@@ -20,6 +20,7 @@
 		43CD2D852A36C9F40037E1E4 /* CloudKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D842A36C9F40037E1E4 /* CloudKit+Extension.swift */; };
 		43CD2D872A36ED930037E1E4 /* ReflectionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D862A36ED930037E1E4 /* ReflectionListViewModel.swift */; };
 		43CD2D922A36EE6D0037E1E4 /* ReflectionListViewController+TableViewDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D912A36EE6D0037E1E4 /* ReflectionListViewController+TableViewDelegateDataSource.swift */; };
+		43CD2D962A3761740037E1E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D952A3761740037E1E4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		43CD2D842A36C9F40037E1E4 /* CloudKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit+Extension.swift"; sourceTree = "<group>"; };
 		43CD2D862A36ED930037E1E4 /* ReflectionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionListViewModel.swift; sourceTree = "<group>"; };
 		43CD2D912A36EE6D0037E1E4 /* ReflectionListViewController+TableViewDelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReflectionListViewController+TableViewDelegateDataSource.swift"; sourceTree = "<group>"; };
+		43CD2D952A3761740037E1E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		43CD2D0F2A3655F30037E1E4 = {
 			isa = PBXGroup;
 			children = (
+				43CD2D952A3761740037E1E4 /* README.md */,
 				43CD2D1A2A3655F30037E1E4 /* Reflections */,
 				43CD2D342A3655F40037E1E4 /* ReflectionsTests */,
 				43CD2D192A3655F30037E1E4 /* Products */,
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CD2D962A3761740037E1E4 /* README.md in Resources */,
 				43CD2D2B2A3655F40037E1E4 /* LaunchScreen.storyboard in Resources */,
 				43CD2D282A3655F40037E1E4 /* Assets.xcassets in Resources */,
 			);

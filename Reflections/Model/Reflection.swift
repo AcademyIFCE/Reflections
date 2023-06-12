@@ -13,11 +13,6 @@ struct Reflection: CKModel {
 
     var record: CKRecord!
     
-    //@CKTimestamp(.creation)
-    var timestamp: Date {
-        record?.creationDate ?? Date()
-    }
-    
     @CKField("title", default: "Nova Reflection")
     var title: String
     
