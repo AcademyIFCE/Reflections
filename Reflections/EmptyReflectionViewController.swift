@@ -29,16 +29,16 @@ struct EmptyReflectionView: View {
                 HStack {
                     Image(systemName: "bird.fill")
                         .font(.system(size: 30))
-                        .offset(y: yoffset)
+                        .offset(y: yoffset+10)
                         .foregroundColor(.cyan)
                     Image(systemName: "bird.fill")
                         .font(.system(size: 30))
-                        .offset(y: -yoffset)
+                        .offset(y: -yoffset+20)
                         .foregroundColor(.white)
                     Image(systemName: "bird.fill")
                         .font(.system(size: 30))
-                        .offset(y: -yoffset * 0.1)
-                        .foregroundColor(.pink)
+                        .offset(y: -yoffset * 0.5)
+                        .foregroundColor(.orange)
                 }
                 Image(systemName: "tree")
                     .font(.system(size: 80))
@@ -46,7 +46,8 @@ struct EmptyReflectionView: View {
                 Image(systemName: "sun.max.fill")
                     .font(.system(size: 50))
                     .foregroundColor(.yellow)
-                    .offset(y: -50)
+                    .offset(y: -40)
+                    .rotationEffect(yoffset > 15 ? .degrees(.pi) : -.degrees(.pi))
             }
             Text("Clique no botão de + para criar uma nova reflection, ou acesse uma das reflections existentes na sidebar ao lado.")
         }
@@ -54,8 +55,8 @@ struct EmptyReflectionView: View {
         .padding()
         .foregroundColor(.white)
         .onAppear {
-            withAnimation(.easeInOut(duration: 2)) {
-                yoffset = 20
+            withAnimation(.easeIn(duration: 2).repeatForever(autoreverses: true)) {
+                yoffset = 30
             }
         }
     }
