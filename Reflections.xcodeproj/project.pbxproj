@@ -10,7 +10,6 @@
 		43CD2D1C2A3655F30037E1E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */; };
 		43CD2D1E2A3655F30037E1E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */; };
 		43CD2D202A3655F30037E1E4 /* ReflectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */; };
-		43CD2D262A3655F30037E1E4 /* Reflections.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D242A3655F30037E1E4 /* Reflections.xcdatamodeld */; };
 		43CD2D282A3655F40037E1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D272A3655F40037E1E4 /* Assets.xcassets */; };
 		43CD2D2B2A3655F40037E1E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD2D292A3655F40037E1E4 /* LaunchScreen.storyboard */; };
 		43CD2D362A3655F40037E1E4 /* ReflectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD2D352A3655F40037E1E4 /* ReflectionsTests.swift */; };
@@ -34,7 +33,6 @@
 		43CD2D1B2A3655F30037E1E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CD2D1D2A3655F30037E1E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		43CD2D1F2A3655F30037E1E4 /* ReflectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionListViewController.swift; sourceTree = "<group>"; };
-		43CD2D252A3655F30037E1E4 /* Reflections.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reflections.xcdatamodel; sourceTree = "<group>"; };
 		43CD2D272A3655F40037E1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CD2D2A2A3655F40037E1E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CD2D2C2A3655F40037E1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				43CD2D272A3655F40037E1E4 /* Assets.xcassets */,
 				43CD2D292A3655F40037E1E4 /* LaunchScreen.storyboard */,
 				43CD2D2C2A3655F40037E1E4 /* Info.plist */,
-				43CD2D242A3655F30037E1E4 /* Reflections.xcdatamodeld */,
 			);
 			path = Reflections;
 			sourceTree = "<group>";
@@ -210,7 +207,6 @@
 			files = (
 				43CD2D202A3655F30037E1E4 /* ReflectionListViewController.swift in Sources */,
 				43CD2D1C2A3655F30037E1E4 /* AppDelegate.swift in Sources */,
-				43CD2D262A3655F30037E1E4 /* Reflections.xcdatamodeld in Sources */,
 				43CD2D502A3659EC0037E1E4 /* Reflection.swift in Sources */,
 				43CD2D1E2A3655F30037E1E4 /* SceneDelegate.swift in Sources */,
 				43CD2D5F2A3668F60037E1E4 /* EmptyReflectionViewController.swift in Sources */,
@@ -497,19 +493,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		43CD2D242A3655F30037E1E4 /* Reflections.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				43CD2D252A3655F30037E1E4 /* Reflections.xcdatamodel */,
-			);
-			currentVersion = 43CD2D252A3655F30037E1E4 /* Reflections.xcdatamodel */;
-			path = Reflections.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 43CD2D102A3655F30037E1E4 /* Project object */;
 }
