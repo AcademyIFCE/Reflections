@@ -49,7 +49,7 @@ struct EmptyReflectionView: View {
                     .offset(y: -40)
                     .rotationEffect(yoffset > 15 ? .degrees(.pi) : -.degrees(.pi))
             }
-            Text("Clique no botão de + para criar uma nova reflection, ou acesse uma das reflections existentes na sidebar ao lado.")
+            Text("Clique no botão de + para criar uma nova reflection, ou acesse alguma da lista ao lado.")
         }
         .multilineTextAlignment(.center)
         .padding()

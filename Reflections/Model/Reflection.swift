@@ -14,7 +14,9 @@ struct Reflection: CKModel {
     var record: CKRecord!
     
     //@CKTimestamp(.creation)
-    var timestamp: Date = Date()
+    var timestamp: Date {
+        record?.creationDate ?? Date()
+    }
     
     @CKField("title", default: "Nova Reflection")
     var title: String
@@ -32,9 +34,8 @@ struct Reflection: CKModel {
     
     init() { }
     
-    init(record: CKRecord! = nil, timestamp: Date, title: String, content: String) {
+    init(record: CKRecord! = nil, title: String, content: String) {
         self.record = record
-        self.timestamp = timestamp
         self.title = title
         self.content = content
     }
