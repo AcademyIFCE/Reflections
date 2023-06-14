@@ -1,6 +1,6 @@
 # Reflections
 
-Made with Swift Catalyst + Nuvem framework
+Made with Mac Catalyst + Nuvem framework
 
 ## Run the project locally
 
