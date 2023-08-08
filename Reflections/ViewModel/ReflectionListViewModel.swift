@@ -11,7 +11,7 @@ class ReflectionListViewModel  {
     
     private var reflections: [Reflection] = [] {
         didSet {
-            updateViewHandler?()
+            updateViewHandler?(.success(()))
         }
     }
     
@@ -24,17 +24,21 @@ class ReflectionListViewModel  {
         .map { (dateString: $0.0, reflections: $0.1) }
     }
     
-    var updateViewHandler: (() -> Void)?
+    var updateViewHandler: ((Result<Void, Error>) -> Void)?
+    
+    func newReflection() -> Reflection {
+        let new = Reflection()
+        reflections.append(new)
+        return new
+    }
     
     func handleEndEdit(on reflection: Reflection) {
-        if reflection.record != nil {
-            for index in reflections.indices {
-                if reflections[index].id == reflection.id {
-                    reflections[index] = reflection
-                }
+        for index in reflections.indices {
+            if reflections[index].id == reflection.id {
+                reflections[index] = reflection
             }
         }
-        
+
         Task {
             var reflection = reflection
             do {
@@ -42,19 +46,21 @@ class ReflectionListViewModel  {
                 print("✅ save complete")
             } catch {
                 print("❌ save error", error)
+                updateViewHandler?(.failure(error))
             }
         }
     }
     
     func handleDelete(on reflection: Reflection) {
-        guard reflection.record != nil else { return }
         reflections.removeAll { $0.id == reflection.id }
+
         Task {
             do {
                 try await reflection.delete(on: .privateDB)
                 print("✅ delete complete")
             } catch {
                 print("❌ delete error", error)
+                updateViewHandler?(.failure(error))
             }
         }
     }
@@ -65,6 +71,7 @@ class ReflectionListViewModel  {
             print("✅ query complete")
         } catch {
             print("❌ query error", error)
+            updateViewHandler?(.failure(error))
         }
     }
     

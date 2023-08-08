@@ -14,9 +14,15 @@ class ReflectionListViewController: UITableViewController {
     init(viewModel: ReflectionListViewModel = .init()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel.updateViewHandler = { [tableView] in
+        self.viewModel.updateViewHandler = { [weak self, tableView] result in
             DispatchQueue.main.async {
-                tableView?.reloadData()
+                switch result {
+                case .success:
+                    self?.hideUnsyncedView()
+                    tableView!.reloadData()
+                case .failure(let error):
+                    self?.showUnsyncedView(error.localizedMessageForCKError)
+                }
             }
         }
     }
@@ -42,11 +48,12 @@ class ReflectionListViewController: UITableViewController {
     }
 
     @objc func newReflection(_ sender: UIBarButtonItem) {
-        
         let newRefVC = ReflectionViewController(
-            reflection: Reflection(),
-            endEditHandler: viewModel.handleEndEdit(on:),
-            deleteHandler: viewModel.handleDelete(on:)
+            viewModel: .init(
+                reflection: viewModel.newReflection(),
+                endEditHandler: viewModel.handleEndEdit(on:),
+                deleteHandler: viewModel.handleDelete(on:)
+            )
         )
         
         if UIDevice.current.model == "iPhone" {
@@ -61,19 +68,67 @@ class ReflectionListViewController: UITableViewController {
         navigationItem.title = "Minhas Reflections"
 
         #if targetEnvironment(macCatalyst)
-        self.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection)),
-            UIBarButtonItem(image: .init(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(refresh))
-        ]
+        self.navigationItem.pinnedTrailingGroup = .init(
+            barButtonItems: [
+                UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection)),
+                UIBarButtonItem(image: .init(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(refresh))
+            ],
+            representativeItem: nil
+        )
+        
         #else
         self.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newReflection))
         ]
-        #endif
-        
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        #endif
+    }
+    
+    var header: UIView?
+    
+    func showUnsyncedView(_ text: String) {
+        header = SyncWarningView(message: text).uiView
+        tableView.tableHeaderView = header
+        header?.translatesAutoresizingMaskIntoConstraints = false
+        header?.widthAnchor.constraint(equalTo: tableView.widthAnchor).isActive = true
+        tableView.reloadData()
+    }
+    
+    func hideUnsyncedView() {
+        tableView.tableHeaderView = nil
+        tableView.reloadData()
+    }
+
+}
+
+
+
+import SwiftUI
+
+struct SyncWarningView: View {
+    var message: String
+
+    var body: some View {
+        HStack {
+            Text(message)
+                .frame(maxWidth: .infinity, minHeight: 50, alignment: .center)
+                .padding(.vertical)
+                .background(Color.accentColor.opacity(0.25))
+                .lineLimit(nil)
+                .multilineTextAlignment(.leading)
+        }
+    }
+    
+    @MainActor
+    var uiView: UIView {
+        UIHostingConfiguration(content: { self })
+            .margins(.horizontal, 0)
+            .makeContentView()
     }
 }
 
+//#Preview("ReflectionListViewController") {
+//    UINavigationController(rootViewController: ReflectionListViewController())
+//}

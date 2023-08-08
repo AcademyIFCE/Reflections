@@ -11,7 +11,7 @@ import CloudKit
 
 struct Reflection: CKModel {
 
-    var record: CKRecord!
+    var record: CKRecord! = CKRecord(recordType: "Reflection")
     
     @CKField("title", default: "Nova Reflection")
     var title: String

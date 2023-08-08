@@ -39,6 +39,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window?.makeKeyAndVisible()
     }
+    
+    @objc private func rotated() {
+        print("rotated")
+        if window?.traitCollection.horizontalSizeClass == .regular {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
+    }
 
 }
-

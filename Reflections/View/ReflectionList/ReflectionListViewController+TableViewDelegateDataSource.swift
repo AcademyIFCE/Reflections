@@ -34,9 +34,11 @@ extension ReflectionListViewController {
         let reflection = viewModel.reflectionsByDate[indexPath.section].reflections[indexPath.row]
         
         let refVC = ReflectionViewController(
-            reflection: reflection,
-            endEditHandler: viewModel.handleEndEdit(on:),
-            deleteHandler: viewModel.handleDelete(on:)
+            viewModel: .init(
+                reflection: reflection,
+                endEditHandler: viewModel.handleEndEdit(on:),
+                deleteHandler: viewModel.handleDelete(on:)
+            )
         )
         
         if UIDevice.current.model == "iPhone" {
@@ -45,5 +47,5 @@ extension ReflectionListViewController {
             self.splitViewController?.setViewController(refVC, for: .secondary)
         }
     }
-
+    
 }

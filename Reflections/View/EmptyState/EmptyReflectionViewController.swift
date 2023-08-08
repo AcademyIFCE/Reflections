@@ -50,6 +50,7 @@ struct EmptyReflectionView: View {
                     .rotationEffect(yoffset > 15 ? .degrees(.pi) : -.degrees(.pi))
             }
             Text("Clique no botão de + para criar uma nova reflection, ou acesse alguma da lista ao lado.")
+                .foregroundStyle(.gray)
         }
         .multilineTextAlignment(.center)
         .padding()
